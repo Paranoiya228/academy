@@ -1,8 +1,21 @@
 package by.academy.classwork.lesson1;
 
 public class Cat {
+	double money;
 	int age;
 	String nickname;
+	
+	public Cat() {  //конструктор по умолчанию(чтобы было), некоторые фрэймворки ругаются
+		
+	}
+	public Cat(String nickname) {
+		this.nickname=nickname;
+	}
+	public Cat(String nickname, int aage) {
+		this.nickname=nickname;
+		this.age=aage;
+	}
+	
 	public void grow(int addAge) {
 		age=age+addAge;
 	}
@@ -15,15 +28,18 @@ public class Cat {
 	public void walk() {
 		System.out.println("Кот гуляет");
 	}
-	public Cat() {  //конструктор по умолчанию(чтобы было), некоторые фрэймворки ругаются
-		
+	public int getAge()
+	{
+		return age;
 	}
-	public Cat(String nickname) {
-		this.nickname=nickname;
+	
+	public void setMoney(double money)
+	{
+		this.money=money;
 	}
-	public Cat(String nickname, int aage) {
-		this.nickname=nickname;
-		this.age=aage;
+	public double getMoney()
+	{
+		return money;
 	}
 	
 }
