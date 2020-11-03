@@ -50,9 +50,10 @@ public class Cat {
 	}
 
 	public boolean setIsHomeAnimal() {
-		Scanner scan = new Scanner(System.in);
+	Scanner scan = new Scanner(System.in);
         System.out.println("Это домашнее животное? 1-да, 0-нет ");
         int num = scan.nextInt();
+	scan.close();
 		if(num==1)
 			isHomeAnimal=true;
 		return isHomeAnimal;
