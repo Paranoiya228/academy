@@ -5,17 +5,13 @@ public class Task4 {
 	{
 
 		int i=0;
-		int p=pow(2,i);
+		int p=(int)Math.pow(2,i);
 		while(p<=1000000)
 		{
 		System.out.println("2^"+i+"="+p);
 		i++;
-		p=pow(2,i);
+		p=(int)Math.pow(2,i);
 		}
-	}
-	public static int pow(int value, int powValue)
-	{
-		return(int) Math.pow(value, powValue);
 	}
 
 }
