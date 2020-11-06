@@ -24,5 +24,4 @@ public class ThirdRandArray {
 		System.out.println(sum);
 
 	}
-
 }

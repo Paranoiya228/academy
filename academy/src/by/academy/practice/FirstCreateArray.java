@@ -1,7 +1,5 @@
 package by.academy.practice;
 
-//import java.util.Arrays;
-
 public class FirstCreateArray {
 
 	public static void main(String[] args) {

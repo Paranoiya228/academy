@@ -1,6 +1,6 @@
 package by.academy.practice;
 
-public class SecondNecheynue {
+public class SecondNechetnue {
 	public static void main(String[] args)
 	{
 		int[] arr = new int[50];
@@ -11,3 +11,4 @@ public class SecondNecheynue {
 	}
 
 }
+

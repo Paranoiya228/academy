@@ -1,8 +1,8 @@
-package practicee;
+package by.academy.practice;
 
 import java.util.Arrays;
 
-public class FourReplaceElementsTo0 {
+public class FourReplaysElementsTo0 {
 	public static void main(String[] args)
 	{
 		int[] arr = new int[8];
