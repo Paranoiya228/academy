@@ -1,8 +1,10 @@
 package by.academy.homework.homework2;
 import java.util.Scanner;
+import java.io.IOException;
+
 
 public class Task2 {
-	public static void main(String[] argc)
+	public static void main(String[] argc) throws IOException
 	{
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Введите тип данных: ");
@@ -32,7 +34,7 @@ public class Task2 {
 			case("char"):
 			{
 				System.out.println("Введите значение переменной: ");
-				int p= scan.nextInt();
+				int p = System.in.read();
 				char pp = (char) p;
 				System.out.println("Код символа: " + pp + " = " + p);
 				break;
