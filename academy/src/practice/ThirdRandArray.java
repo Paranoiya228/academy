@@ -1,4 +1,4 @@
-package practice.arrays;
+package practice;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -11,7 +11,7 @@ public class ThirdRandArray {
 		int[] arr = new int[15];
 		Random rand = new Random();
 		for (i = 0; i < arr.length; i++) 
-			arr[i] = rand.nextInt(dif+1);
+			arr[i] = rand.nextInt(dif+min);
 		
 		System.out.println(Arrays.toString(arr));
 		

@@ -1,4 +1,4 @@
-package practice.arrays;
+package practice;
 
 public class SecondNecheynue {
 	public static void main(String[] args)
