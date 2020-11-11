@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Task3 {
 
-	@SuppressWarnings("resource")
 	public static void main(String[] argc) {
 		
 		Scanner sc = new Scanner(System.in);
