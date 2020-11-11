@@ -8,16 +8,19 @@ public class Solution {
 	// Complete the pairs function below.
 	static int pairs(int k, int[] arr) {
 		int pairsCount = 0;
-		
-		for(int i=0;i<arr.length;i++)
-		{
-			for(int j=i+1;j<arr.length;j++)
-			{
-				if(Math.abs(arr[i]-arr[j])==k)
+
+		for (int i = 0; i < arr.length; i++) {
+
+			for (int j = i + 1; j < arr.length; j++) {
+
+				if (Math.abs(arr[i] - arr[j]) == k) {
 					pairsCount++;
+				}
+				
 			}
+			
 		}
-		
+
 		return pairsCount;
 	}
 
@@ -36,13 +39,14 @@ public class Solution {
 		String[] arrItems = scanner.nextLine().split(" ");
 
 		for (int i = 0; i < n; i++) {
+			
 			arr[i] = Integer.parseInt(arrItems[i]);
-			System.out.print(arr[i]+" ");
+			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
 
 		int result = pairs(k, arr);
-		System.out.println("\n"+result);
+		System.out.println("\n" + result);
 
 		scanner.close();
 	}
