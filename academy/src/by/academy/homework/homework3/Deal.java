@@ -11,6 +11,8 @@ public class Deal implements DealInterface {
 	Person seller;
 	private int productCounter;
 	LocalDate deadline;
+	
+	
 
 	Product[] products;
 
@@ -104,7 +106,10 @@ public class Deal implements DealInterface {
 	private void printBill() {
 		double sum = 0;
 
-		System.out.println("Сделка завершена.");
+		System.out.println("Сделка завершена.\n");
+		System.out.println("Дата сделки: " + getDate());
+		System.out.println("Дедлайн: " + getDeadline());
+		
 
 		for (Product product : products) {
 
@@ -156,14 +161,17 @@ public class Deal implements DealInterface {
 	}
 
 	public void makeChoice(Deal deal) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		choice: for(;;) {
 
 		System.out.println("\nВыберете действие:\n 1-добавить продукт в корзину\n 2-удалить продукт из корзины\n"
 				+ " 3-подсчитать сделку\n 4-закончить покупки");
 
-		Scanner scan = new Scanner(System.in);
+		
 		int ch = scan.nextInt();
 
-		choice: while(ch!=4) {
 
 			
 			switch (ch) {
@@ -199,6 +207,11 @@ public class Deal implements DealInterface {
 				deal();
 				break;
 			}
+			
+			case 4: {
+
+				break choice;
+			}
 
 			default: {
 				System.out.println("Ошибка ввода!");
@@ -206,11 +219,9 @@ public class Deal implements DealInterface {
 			}
 			}
 		printProducts();
-		scan.close();
-		makeChoice(deal);
 
 		} 
-		
+//		scan.close();
 		
 
 	}

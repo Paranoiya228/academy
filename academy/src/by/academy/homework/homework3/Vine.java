@@ -1,5 +1,7 @@
 package by.academy.homework.homework3;
 
+
+@Producer(country = "New Zeland", founderFullName = "NewZelander", startYear = 1600)
 public class Vine extends Product {
 	
 	String sort;
