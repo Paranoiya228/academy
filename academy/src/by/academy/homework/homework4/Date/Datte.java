@@ -3,6 +3,8 @@ package by.academy.homework.homework4.Date;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.DayOfWeek;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,131 +14,118 @@ public class Datte {
 	private int day;
 	private int month;
 	private int year;
-	String date;
 
 	public int getDay() {
 		return day;
-	}
-
-	public void setDay(int day) {
-		this.day = day;
 	}
 
 	public int getMonth() {
 		return month;
 	}
 
-	public void setMonth(int month) {
-		this.month = month;
-	}
-
 	public int getYear() {
 		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
 	}
 
 	public Datte() {
 		super();
 	}
 
-	public Datte(int day, int month, int year) {
-		super();
-		this.day = day;
-		this.month = month;
-		this.year = year;
-	}
-
-	public Datte(String date) {
-		super();
-		this.date = date;
-	}
-
-
-
-	public static class Day {
+	class Day {
+		int value;
 
 	}
 
-	public static class Month {
-
+	class Month {
+		int value;
 	}
 
-	public static class Year {
+	static class Year {
+		int value;
 
-		public boolean isLeapYear(int year) {
+		static boolean isLeapYear(int year) {
 
 			if (year % 4 == 0) {
-				return true;
-			}
-			if (year % 100 == 0) {
-				return false;
-			}
-			if (year % 400 == 0) {
-				return true;
+
+				if (year % 100 != 0 || year % 400 == 0) {
+					return true;
+				}
 			}
 			return false;
 		}
-
-	}
-	
-	public void isValid() {
-
-		String strPattern = "^[0-9]{2}-[0-9]{2}-[0-9]{4}$";
-		Pattern pattern = Pattern.compile(strPattern);
-		Matcher matcher = pattern.matcher(getDate());
-
-		System.out.println("The date is " + (matcher.matches() == true ? "valid" : "invalid"));
 	}
 
 	public Datte createDate() {
 
-		System.out.println("Введите день: ");
-		int day = inputInt();
+		Datte date = new Datte();
 
-		System.out.println("Введите месяц: ");
-		int month = inputInt();
+		Datte.Day day = new Datte.Day();
 
-		System.out.println("Введите год: ");
-		int year = inputInt();
+		System.out.print("Введите день: ");
+		day.value = inputInt();
+		this.day = day.value;
 
-		Datte date = new Datte(day, month, year);
+		Datte.Month month = new Datte.Month();
+
+		System.out.print("Введите месяц: ");
+		month.value = inputInt();
+		this.month = month.value;
+
+		Datte.Year year = new Datte.Year();
+
+		System.out.print("Введите год: ");
+		year.value = inputInt();
+		this.year = year.value;
+
 		return date;
 
 	}
 
-	public void DayOfWeek() throws ParseException {
+	public String DayOfWeek() throws ParseException {
+
+		String dayOfTheWeek = null;
 
 		int year = getYear();
 		int month = getMonth();
 		int day = getDay();
 
-		LocalDate date = LocalDate.of(year, month, day);
+		GregorianCalendar cal = new GregorianCalendar(year, month, day);
+		int num = cal.get(Calendar.DAY_OF_WEEK);
 
-		DayOfWeek dayOfWeek = date.getDayOfWeek();
-
-		System.out.println(date);
-		System.out.println(dayOfWeek);
+		switch (num) {
+		case 1:
+			dayOfTheWeek = "Monday";
+			break;
+		case 2:
+			dayOfTheWeek = "Tuesday";
+			break;
+		case 3:
+			dayOfTheWeek = "Wednesday";
+			break;
+		case 4:
+			dayOfTheWeek = "Thursday";
+			break;
+		case 5:
+			dayOfTheWeek = "Friday";
+			break;
+		case 6:
+			dayOfTheWeek = "Saturday";
+			break;
+		case 7:
+			dayOfTheWeek = "Sunday";
+			break;
+		}
+		return dayOfTheWeek;
 	}
 
-	public int inputInt() {
+	public static int inputInt() {
 
 		Scanner scan = new Scanner(System.in);
 		return scan.nextInt();
 
 	}
 
-	public String inpuLine() {
+	public static String inputLine() {
 
 		Scanner scan = new Scanner(System.in);
 		return scan.nextLine();
