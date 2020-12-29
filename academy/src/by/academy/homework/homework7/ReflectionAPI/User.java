@@ -36,4 +36,9 @@ public class User extends Person {
 		System.out.println("Email: " + getEmail());
 	}
 
+	public String toString() {
+		return "Login: " + getLogin() + " Password: " + getPassword() + " Email: " + getEmail();
+
+	}
+
 }

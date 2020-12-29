@@ -1,6 +1,7 @@
 package by.academy.homework.homework7.ReflectionAPI;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class Application {
@@ -121,6 +122,17 @@ public class Application {
 		} catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println("\n------------TOSTRING WITH INVOKE------------");
+		
+		try {
+		       Method method = user.getDeclaredMethod("toString");
+		       method.setAccessible(true);
+
+		       System.out.println(method.invoke(testUser));
+		   } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+		       e.printStackTrace();
+		   }
 
 	}
 
